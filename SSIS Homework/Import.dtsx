@@ -11,16 +11,18 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{E402A35F-4259-496C-853E-E7E946B92FE1}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{FA8384C2-F268-422E-9B70-F1D6E0DEA14A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Price Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{6C949235-6E9F-4D0E-BDC1-359F0E94B252}"
-      DTS:ObjectName="Price Connection Manager">
+      DTS:DTSID="{7E8EB73C-EA4D-4177-B931-76C97A611B24}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::CurrentFile]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -28,9 +30,9 @@
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
-          DTS:TextQualifier="_x0022_"
+          DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="D:\Lab\SSIS Homework\Data\File Import\Price\tops.csv">
+          DTS:ConnectionString="0">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;store&quot;"
-              DTS:DTSID="{58E84D66-AA1A-4B60-9F97-9CD6C3A4AACE}"
+              DTS:DTSID="{A8EDEBF9-3130-471A-A24D-41BBA34C4293}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;product_code&quot;"
-              DTS:DTSID="{C067EB6D-2238-458F-AD1B-C99E5F95B2F5}"
+              DTS:DTSID="{9D81D6F0-5A02-4EAA-9EB7-9811D62E1B5B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +59,82 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;price&quot;"
-              DTS:DTSID="{70CE19F8-0707-4A0B-BFA8-F8D0FEAF8EE2}"
+              DTS:DTSID="{7F5EC5CE-AB60-457E-82B8-69DCC3F6CA2A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{432134A6-05E4-4AF4-B78B-3CBE8E91C31A}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::CurrentFile]+"__.txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="0__.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;store&quot;"
+              DTS:DTSID="{18740656-97F8-47B5-9A74-4E9B47E45198}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;product_code&quot;"
+              DTS:DTSID="{241A0F16-4F98-47CD-A525-0234577A102D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;price&quot;"
+              DTS:DTSID="{15C3B8EC-309A-4679-A324-A0278C08CA51}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copy of &quot;store&quot;"
+              DTS:DTSID="{82DA1FDE-B3C4-4963-8122-90543E95BB02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copy of &quot;product_code&quot;"
+              DTS:DTSID="{0F856DEF-96D9-41E4-9810-552FB35525B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copy of &quot;price&quot;"
+              DTS:DTSID="{EBBE2B6D-57A8-42E0-A631-0713EE141070}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -129,319 +206,27 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4097A33F-E143-43E7-AD0C-8B9C2C723682}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentFile">
+      <DTS:VariableValue
+        DTS:DataType="8">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0AEDEB8F-8D0E-47F3-B611-4B4E06BDDAC2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="2">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\Import Price"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{7BA01AA4-BFCD-40E2-B67F-69BC63D900F1}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Import Price"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Import Price\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Import Price\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Import Price\Data Conversion.Inputs[Data Conversion Input].Columns[&quot;store&quot;]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="&quot;store&quot;"
-                      lineageId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;store&quot;]" />
-                    <inputColumn
-                      refId="Package\Import Price\Data Conversion.Inputs[Data Conversion Input].Columns[&quot;product_code&quot;]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="&quot;product_code&quot;"
-                      lineageId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;product_code&quot;]" />
-                    <inputColumn
-                      refId="Package\Import Price\Data Conversion.Inputs[Data Conversion Input].Columns[&quot;price&quot;]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="&quot;price&quot;"
-                      lineageId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;price&quot;]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Import Price\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Import Price\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;store&quot;]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;store&quot;]"
-                      name="Copy of &quot;store&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns["store"]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;product_code&quot;]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;product_code&quot;]"
-                      name="Copy of &quot;product_code&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns["product_code"]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;price&quot;]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;price&quot;]"
-                      name="Copy of &quot;price&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns["price"]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Import Price\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Import Price\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Price\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import Price\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import Price\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import Price\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Import Price\Flat File Source"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Source"
-              localeId="1033"
-              name="Flat File Source"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether zero-length columns are treated as null."
-                  name="RetainNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Import Price\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Price Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Price Connection Manager]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output]"
-                  name="Flat File Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;store&quot;]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;store&quot;]"
-                      length="50"
-                      lineageId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;store&quot;]"
-                      name="&quot;store&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;product_code&quot;]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;product_code&quot;]"
-                      length="50"
-                      lineageId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;product_code&quot;]"
-                      name="&quot;product_code&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;price&quot;]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;price&quot;]"
-                      length="50"
-                      lineageId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;price&quot;]"
-                      name="&quot;price&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;store&quot;]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="&quot;store&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;product_code&quot;]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="&quot;product_code&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;price&quot;]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="&quot;price&quot;" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Import Price\Flat File Source.Outputs[Flat File Source Error Output]"
-                  isErrorOut="true"
-                  name="Flat File Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      codePage="65001"
-                      dataType="text"
-                      description="Flat File Source Error Output Column"
-                      lineageId="Package\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      name="Flat File Source Error Output Column" />
-                    <outputColumn
-                      refId="Package\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Import Price.Paths[Flat File Source Output]"
-              endId="Package\Import Price\Data Conversion.Inputs[Data Conversion Input]"
-              name="Flat File Source Output"
-              startId="Package\Import Price\Flat File Source.Outputs[Flat File Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Import Product"
       DTS:CreationName="Microsoft.Pipeline"
@@ -867,17 +652,454 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Loop"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{F94FA020-0AFC-441F-B0DC-9CBD424DDF29}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loop">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{6985B7AB-D044-40C2-BE8E-F1A56F7D00CB}"
+        DTS:ObjectName="{6985B7AB-D044-40C2-BE8E-F1A56F7D00CB}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="D:\Lab\SSIS Homework\Data\File Import\Price" />
+            <FEFEProperty
+              FileSpec="*.csv*" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Loop\Import Price"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7BA01AA4-BFCD-40E2-B67F-69BC63D900F1}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Price"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Loop\Import Price\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Loop\Import Price\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop\Import Price\Data Conversion.Inputs[Data Conversion Input].Columns[&quot;store&quot;]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;store&quot;"
+                          lineageId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;store&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop\Import Price\Data Conversion.Inputs[Data Conversion Input].Columns[&quot;product_code&quot;]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;product_code&quot;"
+                          lineageId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;product_code&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop\Import Price\Data Conversion.Inputs[Data Conversion Input].Columns[&quot;price&quot;]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;price&quot;"
+                          lineageId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;price&quot;]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Loop\Import Price\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;store&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;store&quot;]"
+                          name="Copy of &quot;store&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns["store"]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;product_code&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;product_code&quot;]"
+                          name="Copy of &quot;product_code&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns["product_code"]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;price&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of &quot;price&quot;]"
+                          name="Copy of &quot;price&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns["price"]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Loop\Import Price\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop\Import Price\Flat File Destination"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="1033"
+                  name="Flat File Destination">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop\Import Price\Flat File Destination.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;store&quot;]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;store&quot;"
+                          externalMetadataColumnId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;store&quot;]"
+                          lineageId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;store&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input].Columns[&quot;product_code&quot;]"
+                          cachedCodepage="65001"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;product_code&quot;"
+                          externalMetadataColumnId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;product_code&quot;]"
+                          lineageId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;product_code&quot;]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;store&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="&quot;store&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;product_code&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="&quot;product_code&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[&quot;price&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="&quot;price&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of &quot;store&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Copy of &quot;store&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of &quot;product_code&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Copy of &quot;product_code&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Copy of &quot;price&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Copy of &quot;price&quot;" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Loop\Import Price\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop\Import Price\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;store&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;store&quot;]"
+                          length="50"
+                          lineageId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;store&quot;]"
+                          name="&quot;store&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;product_code&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;product_code&quot;]"
+                          length="50"
+                          lineageId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;product_code&quot;]"
+                          name="&quot;product_code&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;price&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;price&quot;]"
+                          length="50"
+                          lineageId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;price&quot;]"
+                          name="&quot;price&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;store&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="&quot;store&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;product_code&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="&quot;product_code&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;price&quot;]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="&quot;price&quot;" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Loop\Import Price.Paths[Data Conversion Output]"
+                  endId="Package\Loop\Import Price\Flat File Destination.Inputs[Flat File Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Loop\Import Price\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Loop\Import Price.Paths[Flat File Source Output]"
+                  endId="Package\Loop\Import Price\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Loop\Import Price\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{6D714803-5237-4209-9D1A-B80D3E808334}"
+          DTS:ObjectName="{6D714803-5237-4209-9D1A-B80D3E808334}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::CurrentFile" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{7CAA9346-198D-4FFE-A2D3-851A87F0C2F6}"
-      DTS:From="Package\Import Product"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\Import Price" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -889,41 +1111,90 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Import Product"
           TopLeft="60,60" />
         <NodeLayout
-          Size="138,42"
-          Id="Package\Import Price"
-          TopLeft="265,153" />
+          Size="137.6,41.6"
+          Id="Package\Loop\Import Price"
+          TopLeft="12.1999944369002,5.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204.8,102.4"
+          Size="204.8,145.6"
+          Id="Package\Loop"
+          TopLeft="247.33332350519,162.240001289368" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Loop\Import Price">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Loop\Import Price\Flat File Source"
+          TopLeft="70,39" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Loop\Import Price\Data Conversion"
+          TopLeft="63.0000094572699,144.800000165304" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="135.5,102">
+          Id="Package\Loop\Import Price.Paths[Flat File Source Output]"
+          TopLeft="144.500004728635,80.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="198.5,51"
+              EndConnector="0,64.2000001653036"
               Start="0,0"
-              End="198.5,43.5">
+              End="0,56.7000001653036">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="4,25.5" />
+                    End="0,56.7000001653036" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Loop\Import Price\Flat File Destination"
+          TopLeft="238.666657182906,241.280001917521" />
+        <EdgeLayout
+          Id="Package\Loop\Import Price.Paths[Data Conversion Output]"
+          TopLeft="143.40000945727,186.400000165304">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="180.466647725636,54.8800017522177"
+              Start="0,0"
+              End="180.466647725636,47.3800017522177">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="194.5,25.5" />
+                    End="0,23.4400008761088" />
                   <mssgle:CubicBezierSegment
-                    Point1="194.5,25.5"
-                    Point2="198.5,25.5"
-                    Point3="198.5,29.5" />
+                    Point1="0,23.4400008761088"
+                    Point2="0,27.4400008761088"
+                    Point3="4,27.4400008761088" />
                   <mssgle:LineSegment
-                    End="198.5,43.5" />
+                    End="176.466647725636,27.4400008761088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="176.466647725636,27.4400008761088"
+                    Point2="180.466647725636,27.4400008761088"
+                    Point3="180.466647725636,31.4400008761088" />
+                  <mssgle:LineSegment
+                    End="180.466647725636,47.3800017522177" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -934,12 +1205,12 @@
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
-  </Package>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\Import Product">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="161,42"
           Id="Package\Import Product\Data Conversion"
@@ -979,57 +1250,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Import Price">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Import Price\Flat File Source"
-          TopLeft="70,39" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Import Price\Data Conversion"
-          TopLeft="301,124" />
-        <EdgeLayout
-          Id="Package\Import Price.Paths[Flat File Source Output]"
-          TopLeft="148,81">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="233.5,43"
-              Start="0,0"
-              End="233.5,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="4,21.5" />
-                  <mssgle:LineSegment
-                    End="229.5,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="229.5,21.5"
-                    Point2="233.5,21.5"
-                    Point3="233.5,25.5" />
-                  <mssgle:LineSegment
-                    End="233.5,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
