@@ -11,11 +11,26 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Import"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{FA8384C2-F268-422E-9B70-F1D6E0DEA14A}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{E6F8357B-47C1-4C6C-ABD2-966AEFE8D081}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[117.121.215.99,14341.ssis_top_tmp.top]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6E56641C-0D81-4F09-8D30-8B3F0DB7B947}"
+      DTS:ObjectName="117.121.215.99,14341.ssis_top_tmp.top">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=117.121.215.99,14341;User ID=top;Initial Catalog=ssis_top_tmp;Provider=SQLOLEDB.1;Application Name=SSIS-Import-{6E56641C-0D81-4F09-8D30-8B3F0DB7B947}117.121.215.99,14341.ssis_top_tmp.top;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAKwYS02UPwUmuovqFLfdgFwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADY1JPLXbekGlhgIJx/qpvYSm2J6iXabe+xkN9A1MdSIQAAAAAOgAAAAAIAACAAAABebOW7C161CelUk6txLr74S0XOUt0NlgN2yGm8zjV7cyAAAACukehdm8+sCWpTxS4i+FTZ3j/5UhBfQePeNAkVxvlvK0AAAAA4dR7lLjbGoJTB1y/5/U4hlEV5cs7dCjemvdnO582A2+CnfjfYxYtVz51oLe2Dkq4qMnkjMMQ5Ni+jW1roHGQ4</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
@@ -163,7 +178,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;code&quot;"
-              DTS:DTSID="{F31B130A-A7BF-403B-B981-CCD5B8B2047C}"
+              DTS:DTSID="{75B4756F-DAB4-4C56-806B-42F03E12001E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -172,7 +187,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;name&quot;"
-              DTS:DTSID="{ADD195D7-3725-4E96-B10E-50D6BB06989B}"
+              DTS:DTSID="{B2A3BF14-82B6-4BF4-9B4D-F83B831A38D0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -181,7 +196,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;category&quot;"
-              DTS:DTSID="{7C79F034-BB33-4DDC-879F-88D6134AE4BB}"
+              DTS:DTSID="{53B2F2F6-CEA7-4E6A-9B09-AC0D161B592A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -190,7 +205,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;sub_category&quot;"
-              DTS:DTSID="{D5A1842A-5B62-4AA4-AF93-B7D651078621}"
+              DTS:DTSID="{58ACFFC0-060A-4AD1-AD7B-52703FD47172}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -199,7 +214,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;sub_category2&quot;"
-              DTS:DTSID="{94ABE9F2-2292-4C17-AA0E-73BF81919B5B}"
+              DTS:DTSID="{B2242E24-338B-4895-A6DF-F406CFCE3BF8}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -301,11 +316,10 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Import Product\Data Conversion.Outputs[Data Conversion Output].Columns[Ncode]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="50"
+                      length="20"
                       lineageId="Package\Import Product\Data Conversion.Outputs[Data Conversion Output].Columns[Ncode]"
                       name="Ncode"
                       truncationRowDisposition="FailComponent">
@@ -323,8 +337,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Product\Data Conversion.Outputs[Data Conversion Output].Columns[Nname]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="500"
@@ -641,8 +654,139 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Import Product\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Product\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[117.121.215.99,14341.ssis_top_tmp.top]"
+                  connectionManagerRefId="Package.ConnectionManagers[117.121.215.99,14341.ssis_top_tmp.top]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ncode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Ncode"
+                      externalMetadataColumnId="Package\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[code]"
+                      lineageId="Package\Import Product\Data Conversion.Outputs[Data Conversion Output].Columns[Ncode]" />
+                    <inputColumn
+                      refId="Package\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nname]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="Nname"
+                      externalMetadataColumnId="Package\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Import Product\Data Conversion.Outputs[Data Conversion Output].Columns[Nname]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[code]"
+                      dataType="wstr"
+                      length="20"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      dataType="nText"
+                      name="name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Product\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Product\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Product\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Product\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Product\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
+            <path
+              refId="Package\Import Product.Paths[Data Conversion Output]"
+              endId="Package\Import Product\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Import Product\Data Conversion.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Import Product.Paths[Flat File Source Output]"
               endId="Package\Import Product\Data Conversion.Inputs[Data Conversion Input]"
@@ -1113,7 +1257,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="151.2,41.6"
+          Size="146.4,41.6"
           Id="Package\Import Product"
           TopLeft="60,60" />
         <NodeLayout
@@ -1126,97 +1270,21 @@
           PanelSize="204.8,102.4"
           Size="204.8,145.6"
           Id="Package\Loop"
-          TopLeft="247.33332350519,162.240001289368" />
+          TopLeft="287.999988555909,56.8533337851633" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Loop\Import Price">
+    design-time-name="Package\Import Product">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Loop\Import Price\Flat File Source"
-          TopLeft="70,39" />
-        <NodeLayout
           Size="160.8,41.6"
-          Id="Package\Loop\Import Price\Data Conversion"
-          TopLeft="63.0000094572699,144.800000165304" />
-        <EdgeLayout
-          Id="Package\Loop\Import Price.Paths[Flat File Source Output]"
-          TopLeft="144.500004728635,80.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,64.2000001653036"
-              Start="0,0"
-              End="0,56.7000001653036">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56.7000001653036" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Loop\Import Price\Flat File Destination"
-          TopLeft="238.666657182906,241.280001917521" />
-        <EdgeLayout
-          Id="Package\Loop\Import Price.Paths[Data Conversion Output]"
-          TopLeft="143.40000945727,186.400000165304">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="180.466647725636,54.8800017522177"
-              Start="0,0"
-              End="180.466647725636,47.3800017522177">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.4400008761088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.4400008761088"
-                    Point2="0,27.4400008761088"
-                    Point3="4,27.4400008761088" />
-                  <mssgle:LineSegment
-                    End="176.466647725636,27.4400008761088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="176.466647725636,27.4400008761088"
-                    Point2="180.466647725636,27.4400008761088"
-                    Point3="180.466647725636,31.4400008761088" />
-                  <mssgle:LineSegment
-                    End="180.466647725636,47.3800017522177" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Import Product">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="161,42"
           Id="Package\Import Product\Data Conversion"
           TopLeft="262,161" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.6"
           Id="Package\Import Product\Flat File Source"
           TopLeft="100,60" />
         <EdgeLayout
@@ -1250,6 +1318,122 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Import Product\OLE DB Destination"
+          TopLeft="105.999995787939,261.386668743981" />
+        <EdgeLayout
+          Id="Package\Import Product.Paths[Data Conversion Output]"
+          TopLeft="342.4,202.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-150.800004212061,58.7866687439813"
+              Start="0,0"
+              End="-150.800004212061,51.2866687439813">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.3933343719907" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.3933343719907"
+                    Point2="0,29.3933343719907"
+                    Point3="-4,29.3933343719907" />
+                  <mssgle:LineSegment
+                    End="-146.800004212061,29.3933343719907" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-146.800004212061,29.3933343719907"
+                    Point2="-150.800004212061,29.3933343719907"
+                    Point3="-150.800004212061,33.3933343719907" />
+                  <mssgle:LineSegment
+                    End="-150.800004212061,51.2866687439813" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Loop\Import Price">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Loop\Import Price\Flat File Destination"
+          TopLeft="238.666657182906,241.280001917521" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Loop\Import Price\Flat File Source"
+          TopLeft="70,39" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Loop\Import Price\Data Conversion"
+          TopLeft="63.0000094572699,144.800000165304" />
+        <EdgeLayout
+          Id="Package\Loop\Import Price.Paths[Data Conversion Output]"
+          TopLeft="143.40000945727,186.400000165304">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="180.466647725636,54.8800017522177"
+              Start="0,0"
+              End="180.466647725636,47.3800017522177">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.4400008761088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.4400008761088"
+                    Point2="0,27.4400008761088"
+                    Point3="4,27.4400008761088" />
+                  <mssgle:LineSegment
+                    End="176.466647725636,27.4400008761088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="176.466647725636,27.4400008761088"
+                    Point2="180.466647725636,27.4400008761088"
+                    Point3="180.466647725636,31.4400008761088" />
+                  <mssgle:LineSegment
+                    End="180.466647725636,47.3800017522177" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop\Import Price.Paths[Flat File Source Output]"
+          TopLeft="144.500004728635,80.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.2000001653036"
+              Start="0,0"
+              End="0,56.7000001653036">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.7000001653036" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="0,0,0,0"
               RelativePosition="Any" />
@@ -1258,5 +1442,18 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Product\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
